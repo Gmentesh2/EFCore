@@ -6,8 +6,12 @@ namespace EFCore.Models
 {
     public class Employee
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public uint EmployeeID { get; set; }
+        [Required]
+        [Column(Order = 2)]
+        [MaxLength(100)]
         public string EmployeeName { get; set; }
 
         [ForeignKey("Department")]

@@ -11,6 +11,7 @@ namespace EFCore.Models
         public int Id { get; set; }
         [Required]
         [Column(Order = 2)]
+        [MaxLength(50)]
         public string Name { get; set; }
     }
 }
